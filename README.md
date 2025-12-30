@@ -25,17 +25,14 @@ Create a Customer 360° Dashboard in Microsoft Fabric by integrating and cleanin
 
 #### Data Sources
 
-Source System | Origin | What It Contains
 
-customers.csv | CRM system | Customer profile, gender, DOB, etc.
-
-orders.csv | Order Management | Product orders, dates, values
-
-payments.csv | Payment gateway | Payment mode, status, amounts
-
-support_tickets.csv | Zendesk/Support System | Complaints, resolutions, ticket logs
-
-web_activities.csv | Website Analytics | Page views, device types, sessions
+| Source System | Origin | What It Contains |
+|--------------|--------|------------------|
+| **customers.csv** | CRM System | Customer profile, gender, DOB, etc. |
+| **orders.csv** | Order Management | Product orders, dates, values |
+| **payments.csv** | Payment Gateway | Payment mode, status, amounts |
+| **support_tickets.csv** | Zendesk / Support System | Complaints, resolutions, ticket logs |
+| **web_activities.csv** | Website Analytics | Page views, device types, sessions |
 
 
 ### KPIs Tracked
@@ -73,3 +70,27 @@ This diagram illustrates a simple end-to-end data pipeline built using **Microso
 The **Gold layer** serves business-ready analytical tables that are consumed directly by **Power BI (Semantic Model & Dashboards)** to deliver **Customer 360 insights**.
 
 ![Microsoft Fabric Lakehouse Architecture](fabric_medallion_architecture.png)
+
+
+### Project Structure
+```
+├── Data/
+├── Bronze_Raw_Data_Load.ipynb
+├── Silver_Cleansed_Conformed.ipynb
+├── Gold_Business_Marts.ipynb
+├── Pipeline.png
+├── fabric_medallion_architecture.png
+└── README.md
+```
+
+
+### Description
+
+- **Data/** – Raw source CSV files used for ingestion  
+- **Bronze_Raw_Data_Load.ipynb** – Loads raw data into the Bronze layer  
+- **Silver_Cleansed_Conformed.ipynb** – Cleans, standardizes, and conforms data for the Silver layer  
+- **Gold_Business_Marts.ipynb** – Creates business-ready analytical tables in the Gold layer  
+- **Pipeline.png** – End-to-end data pipeline flow diagram  
+- **fabric_medallion_architecture.png** – Microsoft Fabric Bronze–Silver–Gold architecture diagram  
+- **README.md** – Project documentation  
+
